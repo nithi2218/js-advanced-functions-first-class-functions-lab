@@ -8,11 +8,11 @@ const returnLastTwoDrivers = function (drivers) {
 }
 
 
-function createFareMultiplier(num) {
+let createFareMultiplier = (num) => {
     return function fareQuintupler() {
         return num*num;
     }
-}createFareMultiplier(5);
+}
 
 
 function fareDoubler(num) {
@@ -21,15 +21,11 @@ function fareDoubler(num) {
 
 const fareTripler = (num) => num * 3;
 
-function selectingDrivers(drivers) {
-    drivers[0]= returnFirstTwoDrivers;
-    return drivers[0];
-}
+
+let selectingDrivers = [ returnFirstTwoDrivers, returnLastTwoDrivers ];
 
 
-const selectDifferentDrivers = (arrayOfDrivers, function1) => {
-    return function1;
+const selectDifferentDrivers = (drivers, driversToReturn) => {
+    return driversToReturn(drivers);
 }
-selectDifferentDrivers(drivers, returnFirstTwoDrivers);
-selectDifferentDrivers(drivers, returnLastTwoDrivers);
 
