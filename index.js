@@ -8,11 +8,11 @@ const returnLastTwoDrivers = function (drivers) {
 }
 
 
-let createFareMultiplier = (num) => {
-    return function fareQuintupler() {
-        return num*num;
-    }
-}
+const createFareMultiplier = function (multiplyValue) {
+    return function (value) {
+      return multiplyValue * value;
+    };
+  };
 
 
 function fareDoubler(num) {
